@@ -1,13 +1,17 @@
-**How to:**
+# **How to:**
 
-**Important links:**
+**Instructions for how to set up the upstream pipeline conda environment**
 - [https://github.com/Genome-Function-Initiative-Oxford/UpStreamPipeline]
+
+**Details of how to use the CATCHUP pipeline (for chromatin data QC and standardisation) within the upstream environment**
 - [https://github.com/Genome-Function-Initiative-Oxford/UpStreamPipeline/tree/main/genetics/CATCH-UP]
 
-- 1). The first link explains how to set up the upstream pipeline conda environment.
-- 2). The second link details how to use the CATCHUP pipeline (for chromatin data QC and standardisation) within the upstream environment.
+**Examples of my upstream pipeline CATCHUP runs can be found here (for reference):** 
+```
+/well/PROCARDIS/domwest/upstr_processing/
+```
 
-**Methodology as described in thesis:**
+# **Methodology as described in thesis:**
 
 > This pipeline was run as a precursor to DeepHaem with the aim to standardise and QC the data beforehand.
 
@@ -19,7 +23,7 @@
 
 > Before running CATCH-UP, the reference genome (build 38) was downloaded directly from UCSC and indexed by Bowtie2 (integrated in CATCH-UP). When executing the CATCH-UP pipeline, certain parameters needed to be introduced to inform the pipeline as to whether concatenation of lanes, merging of samples, and/or adapter trimming was required. Lane concatenation was not implemented as there were no sample replicates in the input and adapter trimming was not performed due to the use of the reliable aligner, bowtie. The files were merged on single versus paired end sequencing, bulk tissue versus individual cell type data, and according to the methodology employed (ATAC versus DNase etc.). In addition, the files were merged across donors. The pipeline output bed, bigwig, and bam files per merged dataset.
 
-**Results as described in thesis:**
+# **Results as described in thesis:**
 
 > Having selected the heart tissue and cell type datasets for inclusion as input to machine learning (post-cell type enrichment), these datasets needed to undergo quality control and standardisation by an upstream pipeline called CATCH-UP (with LanceOtron integrated) before being fed to machine learning for functional variant prioritisation. This was essential for noise filtering as well as peak inspection – ensuring accurate downstream DeepHaem predictions.
 
@@ -29,10 +33,7 @@
 
 <img width="1920" height="864" alt="catchup" src="https://github.com/user-attachments/assets/fafd1564-fb54-4d78-bc83-9d8693b19190" />
 
-
-**A few additional notes:**
-
-If copying an UpstreamPipeline folder to re-do some kind of analysis (eg by tweaking fastq files to run on) then make sure to delete the 'analysis' folder containing all the previous results. Otherwise this won't work
+# **A few additional notes:**
 
 Commands I used to execute the analysis:
 - If running the job for the first time:
@@ -46,3 +47,5 @@ conda activate upstream
 snakemake --configfile=config/analysis.yaml all --cores 8 --rerun-incomplete --unlock
 snakemake --configfile=config/analysis.yaml all --cores 8 --rerun-incomplete
 ```
+
+If copying an UpstreamPipeline folder to re-do some kind of analysis (eg by tweaking fastq files to run on) then make sure to delete the 'analysis' folder containing all the previous results.
