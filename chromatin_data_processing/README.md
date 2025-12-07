@@ -29,6 +29,7 @@
 
 <img width="1920" height="864" alt="catchup" src="https://github.com/user-attachments/assets/fafd1564-fb54-4d78-bc83-9d8693b19190" />
 
+
 **A few additional notes:**
 
 If copying an UpstreamPipeline folder to re-do some kind of analysis (eg by tweaking fastq files to run on) then make sure to delete the 'analysis' folder containing all the previous results. Otherwise this won't work
