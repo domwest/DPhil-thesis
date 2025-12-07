@@ -49,3 +49,7 @@ snakemake --configfile=config/analysis.yaml all --cores 8 --rerun-incomplete
 ```
 
 If copying an UpstreamPipeline folder to re-do some kind of analysis (eg by tweaking fastq files to run on) then make sure to delete the 'analysis' folder containing all the previous results.
+
+The scripts provided in this repo were used post-analysis for:
+- Checking how many peaks were present before/after applying a score threshold (as provided by LanceOtron)
+- Editing the peak output files for viewing in UCSC
