@@ -27,6 +27,8 @@
 
 > Running CATCH-UP led to more refined and therefore accurate chromatin datasets as shown in the example below. In figure 31, the cardiac muscle cell DNase peaks showed a cleaner track with more stringently assigned peaks after running CATCH-UP with LanceOtron (overall peak scores ≥ 0.5) compared to before. Overall peak scores ≥ 0.5 were chosen as this is the widely accepted threshold (as seen by Gao et al. (2023) and Crump et al. (2023)).
 
+<img width="1920" height="864" alt="catchup" src="https://github.com/user-attachments/assets/fafd1564-fb54-4d78-bc83-9d8693b19190" />
+
 **A few additional notes:**
 
 If copying an UpstreamPipeline folder to re-do some kind of analysis (eg by tweaking fastq files to run on) then make sure to delete the 'analysis' folder containing all the previous results. Otherwise this won't work
